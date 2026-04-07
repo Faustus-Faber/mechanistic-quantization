@@ -1,0 +1,7 @@
+transformer_lens>=2.0.0
+transformers
+torch>=2.2.0
+bitsandbytes>=0.42.0
+accelerate
+pydantic
+fasttext

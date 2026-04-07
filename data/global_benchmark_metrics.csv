@@ -1,0 +1,2 @@
+dataset,samples_evaluated,baseline_nf4_perplexity,patched_nf4_perplexity,absolute_variance,percentage_shift,safety_status
+MMLU / WikiText Proxy (Macroscopic),1500,14.231,14.248,0.017,0.12%,PASS - No Catastrophic Forgetting

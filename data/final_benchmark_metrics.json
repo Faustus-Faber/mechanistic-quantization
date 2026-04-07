@@ -1,0 +1,8 @@
+{
+  "capability_recovery_percentage": 87.8048780487805,
+  "interference_survival_percentage": 96.66666666666667,
+  "total_recovery_set_size": 41,
+  "total_interference_set_size": 60,
+  "recovered_prompts": 36,
+  "surviving_prompts": 58
+}

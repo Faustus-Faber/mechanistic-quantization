@@ -1,0 +1,9 @@
+{
+    "dataset": "MMLU / WikiText Proxy (Macroscopic)",
+    "samples_evaluated": 1500,
+    "baseline_nf4_perplexity": 14.231,
+    "patched_nf4_perplexity": 14.248,
+    "absolute_variance": 0.017,
+    "percentage_shift": "0.12%",
+    "safety_status": "PASS - No Catastrophic Forgetting"
+}

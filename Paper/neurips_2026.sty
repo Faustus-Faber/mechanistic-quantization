@@ -1,0 +1,50 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{neurips_2026}[2026/04/07 NeurIPS 2026 submission/camera-ready style file]
+
+\newif\if@preprint \@preprintfalse
+\newif\if@final \@finalfalse
+\newif\if@nonatbib \@nonatbibfalse
+
+\DeclareOption{preprint}{\@preprinttrue}
+\DeclareOption{final}{\@finaltrue}
+\DeclareOption{nonatbib}{\@nonatbibtrue}
+\ProcessOptions\relax
+
+\RequirePackage[margin=1.5in]{geometry}
+\RequirePackage{times}
+\if@nonatbib\else
+  \RequirePackage{natbib}
+\fi
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{hyperref}
+\RequirePackage{booktabs}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+
+% Footer configuration for preprint
+\if@preprint
+  \def\@oddfoot{\hfil\textit{Preprint. Work in progress.}\hfil}
+\fi
+
+% Overriding maketitle to match standard NeurIPS formatting with black hrules
+\def\@maketitle{%
+  \vbox{%
+    \hsize\textwidth
+    \linewidth\hsize
+    \vskip 0.1in
+    \hrule height 4pt
+    \vskip 0.25in
+    \centering
+    {\LARGE\bf \@title\par}
+    \vskip 0.25in
+    \hrule height 1pt
+    \vskip 0.25in
+    \def\and{%
+      \end{tabular}\hfil\linebreak[0]\hfil
+      \begin{tabular}[t]{c}\bf\rule{\z@}{1.3ex}%
+    }
+    \begin{tabular}[t]{c}\bf\rule{\z@}{1.3ex}\@author\end{tabular}%
+    \vskip 0.3in\@minus 0.1in
+  }
+}
