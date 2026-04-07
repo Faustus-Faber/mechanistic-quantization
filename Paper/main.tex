@@ -244,4 +244,9 @@ Under 4-bit constraints natively deployed, the model drops recursive array bound
 
 Computing mathematically precise attribution patching on discretely bound `bitsandbytes` parameter blocks requires circumventing the non-differentiable step functions inherent to 4-bit quantization maps. We utilized a Straight-Through Estimator (STE) gradient approximation assumption during the backward computational tracking, allowing first-order Taylor expansions to mathematically bypass discrete uniform rounding operations. This provides a continuous gradient proxy that formally tracks topological routing pathways and isolates underlying structural failure clusters without relying heavily on recursive or computationally destructive layer knockout iteration networks.
 
+\section{Cross-Model Dimensionality Adaptation}
+\label{appendix:adaptation}
+
+To perform monosemantic extraction, we mapped the failures from the \texttt{google/gemma-4-e2b-it} architecture (which operates with a hidden residual dimensionality of 1536) onto the canonical dictionary learned by \texttt{gemma-scope-2b} (which expects an input dimension of 2304). Rather than enforcing lossy linear down-projections, we utilized a zero-padded universal adapter mapping, padding the target dimension space to 2304 while mathematically preserving the isolated feature mappings. Additionally, to decode the intense semantic failures natively at Layers 29--31, we dynamically clamped our probing matrix transposition down to align cleanly with the canonical SAE's terminal Layer 17 scope.
+
 \end{document}
